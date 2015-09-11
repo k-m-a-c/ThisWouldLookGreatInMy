@@ -3,14 +3,14 @@
   <% @photos.each do |photo| %>
     <div class="photo">
       <img src="<%= photo.image_url %>" alt="<%= photo.name %>">
-    </div>
 
-    <div class="photo-name">
-      <%= photo.name %>
-    </div>
+      <div class="photo-name">
+        <%= photo.name %>
+      </div>
 
-    <div class="artist_name">
-      <%= photo.author_full_name %>
+      <div class="artist-name">
+        <%= photo.author_full_name %>
+      </div>
     </div>
   <% end %>
 </div>
