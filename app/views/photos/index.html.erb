@@ -2,15 +2,15 @@
   <h1>All Photos</h1>
   <% @photos.each do |photo| %>
     <div class="photo">
-      <img src="<%= photo["image_url"] %>" alt="<%= photo["name"] %>">
+      <img src="<%= photo.image_url %>" alt="<%= photo.name %>">
     </div>
 
     <div class="photo-name">
-      <%= photo["name"] %>
+      <%= photo.name %>
     </div>
 
     <div class="artist_name">
-      <%= photo["user"]["firstname"] %> <%= photo["user"]["lastname"] %>
+      <%= photo.author_full_name %>
     </div>
   <% end %>
 </div>
