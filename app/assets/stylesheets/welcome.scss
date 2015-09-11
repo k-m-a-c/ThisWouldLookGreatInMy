@@ -1,11 +1,18 @@
 body {
   font-family: sans-serif;
 
-  h1, h2, h3 {
-    text-align: center;
-  }
-
   div.container {
     margin: 2rem;
+
+    div#hero {
+      text-align: center;
+
+      h1, h2, h3 {
+      }
+
+      a {
+      }
+
+    }
   }
 }
