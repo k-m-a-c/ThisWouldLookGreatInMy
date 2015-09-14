@@ -1,9 +1,5 @@
 class PhotosController < ApplicationController
-
   def index
-    @photos = Photo.get_photos
-  end
-
-  def show
+    @photos = Photo.popular(current_user.id)
   end
 end
