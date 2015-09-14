@@ -13,8 +13,10 @@
       </div>
 
       <div class="favorite-button">
-        <% if current_user %>
+        <% if current_user && !photo.favorited %>
           <%= link_to "Favorite", create_favorite_path(:photo_id => photo.provider_id), method: :post %>
+        <% elsif current_user && photo.favorited %>
+            You favorited this photo
         <% else %>
           <%= link_to "Favorite", "/auth/500px" %>
         <% end %>
