@@ -16,8 +16,8 @@ class Favorite < ActiveRecord::Base
       favorite = Favorite.new(photo_uid: photo_id)
       favorite.save
       return favorite
-    rescue
-      "An error occurred"
+    rescue StandardError => e
+      flash[:error] = [e.message]
     end
   end
 end

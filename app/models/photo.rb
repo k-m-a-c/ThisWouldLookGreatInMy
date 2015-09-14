@@ -36,8 +36,8 @@ class Photo
       hash['photos'].map{ |photo|
         Photo.new(photo)
       }
-    rescue
-      "An error occurred"
+    rescue StandardError => e
+      flash[:error] = [e.message]
     end
   end
 end
