@@ -36,6 +36,8 @@ gem 'httparty'
 # Use Figaro for environment management
 gem 'figaro'
 
+gem 'f00px'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -11,6 +11,10 @@
       <div class="artist-name">
         <%= photo.author_full_name %>
       </div>
+
+      <div class="like_button">
+        <%= link_to "Like", create_like_path(photo.id), method: :post %>
+      </div>
     </div>
   <% end %>
 </div>
