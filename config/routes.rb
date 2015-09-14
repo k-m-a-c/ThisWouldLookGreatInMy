@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   resources :photos, only: [:index, :show]
 
-  post '/photos/like/:id', to: 'likes#create', as: 'create_like'
+  post '/photos/favorite/:photo_id', to: 'favorites#create', as: 'create_favorite'
 end
