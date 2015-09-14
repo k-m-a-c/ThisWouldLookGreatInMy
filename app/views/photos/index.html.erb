@@ -12,8 +12,12 @@
         <%= photo.author_full_name %>
       </div>
 
-      <div class="like_button">
-        <%= link_to "Like", create_like_path(photo.id), method: :post %>
+      <div class="favorite-button">
+        <% if current_user %>
+          <%= link_to "Favorite", create_favorite_path(:photo_id => photo.provider_id), method: :post %>
+        <% else %>
+          <%= link_to "Favorite", "/auth/500px" %>
+        <% end %>
       </div>
     </div>
   <% end %>

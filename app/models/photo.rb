@@ -2,14 +2,14 @@ class Photo
   include HTTParty
   base_uri 'https://api.500px.com/v1'
 
-  attr_accessor :id, :name, :width, :height, :for_sale, :nsfw,
+  attr_accessor :provider_id, :name, :width, :height, :for_sale, :nsfw,
     :image_url, :author_full_name, :author_image
 
   def self.api_key
     Figaro.env.consumer_key
   end
 
-  def self.all
+  def self.get_photos
     feature = "feature=popular"
     sorting = "&sort=rating&rpp=100&image_size=4&include_store=store_print&include_states=voted"
 
@@ -23,7 +23,7 @@ class Photo
   end
 
   def initialize(params)
-    @id = params['id']
+    @provider_id = params['id']
     @name = params['name']
     @width = params['width']
     @height = params['height']
@@ -33,4 +33,5 @@ class Photo
     @author_full_name = params['user']['fullname']
     @author_image = params['user']['userpic_url']
   end
+
 end
