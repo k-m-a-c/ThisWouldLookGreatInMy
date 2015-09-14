@@ -1,10 +1,12 @@
 class Favorite < ActiveRecord::Base
-  attr_accessor :photo_uid
 
   def self.f00px(user_id, photo_id)
     begin
       user = User.find(user_id)
+      photo_id = photo_id.to_i
 
+      # found the F00px gem after some lurking on
+      # 500px's Github org page
       client = F00px::Client.new
       client.token = user.token
       client.token_secret = user.token_secret
