@@ -1,5 +1,5 @@
 class Favorite < ActiveRecord::Base
-  attr_accessor :uid
+  attr_accessor :photo_uid
 
   def self.f00px(user_id, photo_id)
     begin
