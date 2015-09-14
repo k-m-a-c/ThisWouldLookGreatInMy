@@ -36,6 +36,8 @@ gem 'httparty'
 # Use Figaro for environment management
 gem 'figaro'
 
+gem 'omniauth'
+gem 'omniauth-500px'
 gem 'f00px'
 
 # Use ActiveModel has_secure_password
