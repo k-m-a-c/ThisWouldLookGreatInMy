@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_filter :authenticate_user!
   def create
     # keep the controller thin by moving the API request
     # and response cycle to the model
