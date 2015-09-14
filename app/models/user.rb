@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
+
   def self.from_omniauth(auth)
     user = find_by(:provider => 'fiveHundredPx', :uid => auth['uid']) || create_from_omniauth(auth)
     if user
+      # update access token each time so that it doesn't expire
       user.token = auth['credentials']['token']
       user.token_secret = auth['credentials']['secret']
       user.save
