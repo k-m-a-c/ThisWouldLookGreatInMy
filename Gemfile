@@ -36,9 +36,17 @@ gem 'httparty'
 # Use Figaro for environment management
 gem 'figaro'
 
+# OAuth and 500px API
 gem 'omniauth'
 gem 'omniauth-500px'
 gem 'f00px'
+
+# UI tools
+gem 'autoprefixer-rails'
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
+gem 'meta-tags-helpers', '~> 0.2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
