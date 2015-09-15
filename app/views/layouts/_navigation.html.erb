@@ -1,21 +1,19 @@
-<header class="centered-navigation" role="banner">
-  <div class="centered-navigation-wrapper">
-    <a href="javascript:void(0)" class="mobile-logo">
+<header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="javascript:void(0)" class="logo">
       <h1>G A L L E R Y</h1>
+      <div id="callout"><p>Powered by <i class="fa fa-500px"></i></p></div>
     </a>
-    <a href="javascript:void(0)" id="js-centered-navigation-mobile-menu" class="centered-navigation-mobile-menu">MENU</a>
+    <% if current_user %>
+      <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+    <% end %>
     <nav role="navigation">
-      <ul id="js-centered-navigation-menu" class="centered-navigation-menu show">
-        <li class="nav-link logo">
-          <h1>G A L L E R Y</h1>
+      <ul id="js-navigation-menu" class="navigation-menu show">
+      <% if current_user %>
+        <li class="nav-link"><%= link_to "Sign out", signout_path, method: :delete %>
         </li>
-        <% if current_user %>
-        <li class="nav-link">
-          <%= current_user.name %> <%= link_to "Sign out", signout_path, method: :delete %>
-        <% else %>
-          <%= link_to "Sign in with 500px", "/auth/500px" %>
-        </li>
-        <% end %>
+      </div>
+      <% end %>
       </ul>
     </nav>
   </div>
