@@ -1,18 +1,84 @@
-body {
-  font-family: sans-serif;
+#hero {
+  $base-border-radius: 3px !default;
+  $action-color: #0099E5 !default;
+  $large-screen: em(860) !default;
+  $hero-background-top: #7F99BE;
+  $hero-background-bottom: #000;
+  $hero-color: white;
+  $gradient-angle: 10deg;
+  $hero-image: image-url('background.jpg');
+  overflow: hidden;
 
-  div.container {
-    margin: 2rem;
+  @include background($hero-image, linear-gradient($gradient-angle, $hero-background-bottom, $hero-background-top));
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 3rem;
 
-    div#hero {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+
+  #hero-inner {
+    @include outer-container;
+    @include clearfix;
+    margin: 2rem auto;
+    padding-top: 25%;
+    padding-left: 6%;
+    padding-right: 6%;
+    text-align: center;
+    position: relative;
+
+    #hero-logo img {
+      height: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    #hero-copy {
       text-align: center;
+      padding-top: 2rem;
 
-      h1, h2, h3 {
+      h1 {
+        color: $hero-color;
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+
+        @include media($large-screen) {
+          font-size: 1.8rem;
+        }
       }
 
-      a {
-      }
+      p {
+        color: $hero-color;
+        line-height: 1.4rem;
+        margin: 0 auto 1rem auto;
 
+        @include media($large-screen) {
+          font-size: 1.1rem;
+          max-width: 50%;
+        }
+      }
+    }
+    #hero-button {
+      padding-top: 1.5rem;
+
+      form.button_to {
+        display: inline-block;
+        margin: 0.5rem;
+
+      }
     }
   }
+
+  // .overlay {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   background-color: #324766;
+  //   opacity: 0.5;
+  // }
 }

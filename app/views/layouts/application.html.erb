@@ -2,24 +2,24 @@
 <html>
 <head>
   <title>ThisWouldLookGreatInMy</title>
+  <%= meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="container">
-  <div id="nav">
-    <% if current_user %>
-      Signed in as <%= current_user.name %>
-      <%= link_to "Sign out", signout_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in with 500px", "/auth/500px" %>
-    <% end %>
-  </div>
+<%= render partial: "layouts/navigation" %>
+  <!-- <div id="nav">
+    <%# if current_user %>
+      Signed in as <%#= current_user.name %>
+      <%#= link_to "Sign out", signout_path, method: :delete %>
+    <%# else %>
+      <%#= link_to "Sign in with 500px", "/auth/500px" %>
+    <%# end %>
+  </div> -->
   <% flash.each do |name,msg| %>
     <%= content_tag :div, msg, id: "flash_#{name}" %>
   <% end %>
   <%= yield %>
-</div>
 </body>
 </html>
