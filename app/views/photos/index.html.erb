@@ -1,25 +1,28 @@
 <div class="container">
   <h1>All Photos</h1>
   <% @photos.each do |photo| %>
-    <div class="photo">
-      <img src="<%= photo.image_url %>" alt="<%= photo.name %>">
-
-      <div class="photo-name">
-        <%= photo.name %>
+    <div class="photo-box">
+      <div class="photo">
+        <img src="<%= photo.image_url %>" alt="<%= photo.name %>">
       </div>
+      <div class="photo-info">
+        <div class="photo-name">
+          <%= photo.name %>
+        </div>
 
-      <div class="artist-name">
-        <%= photo.author_full_name %>
-      </div>
+        <div class="artist-name">
+          <%= photo.author_full_name %>
+        </div>
 
-      <div class="favorite-button">
-        <% if current_user && !photo.favorited %>
-          <%= link_to "Favorite", create_favorite_path(:photo_id => photo.provider_id), method: :post %>
-        <% elsif current_user && photo.favorited %>
-            You favorited this photo
-        <% else %>
-          <%= link_to "Favorite", "/auth/500px" %>
-        <% end %>
+        <div class="favorite-button">
+          <% if current_user && !photo.favorited %>
+            <%= link_to "Favorite", create_favorite_path(:photo_id => photo.provider_id), method: :post %>
+          <% elsif current_user && photo.favorited %>
+              You favorited this photo
+          <% else %>
+            <%= link_to "Favorite", "/auth/500px" %>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
