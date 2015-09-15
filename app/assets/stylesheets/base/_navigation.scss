@@ -26,6 +26,7 @@ header.navigation {
   position: fixed;
   top: 0;
   left: 0;
+  line-height: $heading-line-height;
 
   .navigation-wrapper {
     @include clearfix;
@@ -40,7 +41,8 @@ header.navigation {
     padding-left: $navigation-padding;
     padding-right: 2em;
     padding-top: 1rem;
-    padding-bottom: 4rem;
+    padding-bottom: 3.5rem;
+    margin-top: 0.3rem;
     color: white;
 
     h1 {
