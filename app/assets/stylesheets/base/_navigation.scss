@@ -78,7 +78,7 @@
 // stop webkit flicker
     clear: both;
     display: none;
-    margin: 0 auto;
+    margin: 0.8rem auto;
     overflow: visible;
     padding: 0;
     width: 100%;
@@ -97,15 +97,9 @@
 
 // The nav items
 
-  .nav-link:first-child {
-    @include media($horizontal-bar-mode) {
-      margin-left: $centered-navigation-item-nudge;
-    }
-  }
-
   ul li.nav-link {
     background: $centered-navigation-background;
-    display: block;
+    display: inline-block;
     line-height: $centered-navigation-height;
     overflow: hidden;
     padding-right: $centered-navigation-submenu-padding;
@@ -148,14 +142,18 @@
     line-height: 0;
 
     @include media($large-screen) {
-      display: inline;
+      display: block;
     }
   }
 
   .logo {
     margin-bottom: -$centered-navigation-logo-height / 3;
     max-height: $centered-navigation-logo-height;
-    opacity: 0.6;
+    color: $nav-font-color;
+
+    h1 {
+      font-size: 26px;
+    }
   }
 
 

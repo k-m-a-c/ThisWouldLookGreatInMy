@@ -8,15 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render partial: "layouts/navigation" %>
-  <!-- <div id="nav">
-    <%# if current_user %>
-      Signed in as <%#= current_user.name %>
-      <%#= link_to "Sign out", signout_path, method: :delete %>
-    <%# else %>
-      <%#= link_to "Sign in with 500px", "/auth/500px" %>
-    <%# end %>
-  </div> -->
+  <%= render partial: "layouts/navigation" %>
   <% flash.each do |name,msg| %>
     <%= content_tag :div, msg, id: "flash_#{name}" %>
   <% end %>

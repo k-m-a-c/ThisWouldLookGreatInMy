@@ -9,6 +9,13 @@
         <li class="nav-link logo">
           <h1>G A L L E R Y</h1>
         </li>
+        <% if current_user %>
+        <li class="nav-link">
+          <%= current_user.name %> <%= link_to "Sign out", signout_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign in with 500px", "/auth/500px" %>
+        </li>
+        <% end %>
       </ul>
     </nav>
   </div>
