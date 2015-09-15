@@ -26,24 +26,44 @@
     @include clearfix;
     margin: 2rem auto;
     padding-top: 25%;
-    padding-left: 6%;
-    padding-right: 6%;
+    padding-left: 2%;
+    padding-right: 2%;
     text-align: center;
     position: relative;
 
-    #hero-logo img {
-      height: 4rem;
-      margin-bottom: 1rem;
+    @include media($large-screen) {
+      padding-top: 12%;
+    }
+
+    #hero-logo {
+      h1 {
+        height: 4rem;
+        margin-bottom: 1rem;
+        font-size: 30px;
+        color: white;
+        font-family: 'Josephin Sans', sans-serif;
+        font-weight: 100;
+      }
+
+      #callout {
+        color: white;
+        font-family: 'Josephin Sans', sans-serif;
+        font-weight: 100;
+      }
     }
 
     #hero-copy {
       text-align: center;
-      padding-top: 2rem;
+      padding-top: 4rem;
+      text-shadow: 1px 1px 2px grey;
 
       h1 {
         color: $hero-color;
-        font-size: 1.6rem;
+        font-size: 2rem;
         margin-bottom: 0.5rem;
+        color: white;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
 
         @include media($large-screen) {
           font-size: 1.8rem;
