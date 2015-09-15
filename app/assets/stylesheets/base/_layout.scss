@@ -1,3 +1,19 @@
 body {
   margin: 0;
+
+  div#flash_notice {
+    background-color: $gold;
+    position: relative;
+    margin-top: 4.8rem;
+    margin-bottom: -5rem;
+    color: white;
+    padding: 1rem 8rem;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: transparentize($gold, 0.3);
+    }
+  }
 }
+
