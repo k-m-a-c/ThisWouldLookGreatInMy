@@ -39,7 +39,7 @@ gem 'figaro'
 # OAuth and 500px API
 gem 'omniauth'
 gem 'omniauth-500px'
-gem 'f00px'
+gem 'f00px', git: 'https://github.com/500px/f00px'
 
 # UI tools
 gem 'autoprefixer-rails'
