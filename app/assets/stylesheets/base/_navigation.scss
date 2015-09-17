@@ -27,6 +27,7 @@ header.navigation {
   top: 0;
   left: 0;
   line-height: $heading-line-height;
+  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.15), 4px 2px 4px rgba(255, 255, 255, 0.15) inset;
 
   .navigation-wrapper {
     @include clearfix;
@@ -40,8 +41,8 @@ header.navigation {
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
-    padding-top: 1rem;
-    padding-bottom: 3.5rem;
+    padding-top: 0.7rem;
+    padding-bottom: 2.5rem;
     margin-top: 0.3rem;
     color: white;
 
@@ -104,7 +105,7 @@ header.navigation {
     float: none;
     min-height: $navigation-height;
     z-index: 9999999;
-    padding-top: 0.5rem;
+    padding-top: 0rem;
 
     @include media ($horizontal-bar-mode) {
       float: right;
