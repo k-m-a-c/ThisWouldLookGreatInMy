@@ -5,14 +5,13 @@
       <div id="callout"><p>Powered by <i class="fa fa-500px"></i></p></div>
     </a>
     <% if current_user %>
-      <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+      <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu"><i class="fa fa-cog fa-lg"></i></a>
     <% end %>
     <nav role="navigation">
       <ul id="js-navigation-menu" class="navigation-menu show">
       <% if current_user %>
         <li class="nav-link"><%= link_to "Sign out", signout_path, method: :delete %>
         </li>
-      </div>
       <% end %>
       </ul>
     </nav>

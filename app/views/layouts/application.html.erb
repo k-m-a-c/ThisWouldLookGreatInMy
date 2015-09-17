@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ThisWouldLookGreatInMy</title>
-  <%= meta_tags %>
+  <title>Gallery | Find art for your home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0,width=device-width">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans:400,300|Josephin+Sans:400,300,100' %>
   <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- navigation -->
   <%= render partial: "layouts/navigation" %>
+
+  <!-- flash -->
   <% flash.each do |name,msg| %>
     <%= content_tag :div, msg, id: "flash_#{name}" %>
   <% end %>
-  <%= yield %>
+
+  <!-- main -->
+  <main>
+    <%= yield %>
+  </main>
+  <!-- scripts -->
 </body>
 </html>
