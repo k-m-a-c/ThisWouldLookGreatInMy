@@ -20,7 +20,10 @@ ActiveRecord::Schema.define(version: 20150914065754) do
     t.integer  "photo_uid",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider"
@@ -34,4 +37,5 @@ ActiveRecord::Schema.define(version: 20150914065754) do
     t.datetime "updated_at",   null: false
   end
 
+  add_foreign_key "favorites", "users"
 end

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :favorites, dependent: :destroy
 
   def self.from_omniauth(auth)
     user = find_by(:provider => 'fiveHundredPx', :uid => auth['uid']) || create_from_omniauth(auth)
