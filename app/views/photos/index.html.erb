@@ -10,16 +10,25 @@
         </div>
 
         <div class="artist-name">
-          <%= photo.author_full_name %>
+          by <%= photo.author_full_name %>
         </div>
 
         <div class="favorite-button">
+          <!-- create a favorite -->
           <% if current_user && !photo.favorited %>
-            <%= link_to "Favorite", create_favorite_path(:photo_id => photo.provider_id), method: :post %>
+            <%= button_to create_favorite_path(:photo_id => photo.provider_id) do %>
+              <span><i class="fa fa-star-o fa-lg"></i> Favorite</span>
+            <% end %>
+          <!-- remove a favorite -->
           <% elsif current_user && photo.favorited %>
-              You favorited this photo
+              <%= button_to delete_favorite_path(:photo_id => photo.provider_id), method: :delete do %>
+                <span><i class="fa fa-star fa-lg"></i>Remove Favorite</span>
+              <% end %>
+          <!-- if not authed, auth -->
           <% else %>
-            <%= link_to "Favorite", "/auth/500px" %>
+            <%= button_to "/auth/500px", method: :get do %>
+              <span><i class="fa fa-star fa-lg"></i> Favorite</span>
+            <% end %>
           <% end %>
         </div>
       </div>

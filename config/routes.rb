@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :photos, only: [:index, :show]
 
   post '/photos/favorite/:photo_id', to: 'favorites#create', as: 'create_favorite'
+  delete '/photos/favorite/:photo_id', to: 'favorites#delete', as: 'delete_favorite'
 end
