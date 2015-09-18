@@ -53,18 +53,26 @@ div.container {
 
       div.artist-name {
         margin-left: 1rem;
+        margin-bottom: 1rem;
         font-size: 16px;
         font-family: "Josephin Sans", sans-serif;
         font-weight: 100;
       }
 
-      div.favorite-button {
-        margin-left: 0.5rem;
+      div.divider {
+        position: relative;
+        margin-bottom: 0.5rem;
+        padding: 1px;
+        background-color: #F2F2F2;
+      }
 
-        form.button_to {
+      div.favorite-button {
+        margin-left: 1rem;
+
+        form.link_to {
           display: inline-block;
           margin: 0.5rem;
-          box-shadow: 0px 1px 0px rgba(255,255,255,0.15) inset,0px 1px 2px rgba(0,0,0,0.15);
+          box-shadow: $element-shadow;
           background-color: $gold;
           border-radius: 3px;
 
@@ -78,7 +86,7 @@ div.container {
           }
 
           i {
-            padding-right: 0.5rem;
+            margin-right: 1rem;
           }
         }
       }
