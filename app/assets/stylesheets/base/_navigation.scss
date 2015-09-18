@@ -88,6 +88,10 @@ header.navigation {
       display: none;
     }
 
+    @include media($phone) {
+      margin: 0.25rem 0 0 0;
+    }
+
     @include media($tablet) {
       margin: 0.25rem 0 0 0;
     }

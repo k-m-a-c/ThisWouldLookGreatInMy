@@ -1,6 +1,9 @@
 <div class="container">
   <% @photos.each do |photo| %>
     <div class="photo-box">
+      <div class="price">
+        $<%= rand(250..2500) %>.00
+      </div>
       <div class="photo">
         <img src="<%= photo.image_url %>" alt="<%= photo.name %>">
       </div>
