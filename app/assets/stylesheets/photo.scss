@@ -1,0 +1,34 @@
+div.container {
+  @include outer-container;
+  padding-top: $navigation-bar-height / 6;
+
+  div#large-photo-display {
+
+    div#author-image {
+
+    }
+
+    div#photo-display-name {
+
+    }
+  }
+
+  div#photo-purchase-options {
+
+    div#photo-size-options {
+
+    }
+
+    div#photo-canvas-options {
+
+    }
+
+    div#photo-frame-options {
+
+    }
+  }
+
+  div#buy-button {
+
+  }
+}
