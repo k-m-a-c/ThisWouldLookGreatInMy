@@ -5,7 +5,7 @@
         $<%= rand(250..2500) %>.00
       </div>
       <div class="photo">
-        <%= link_to photo_path(photo.id) do %>
+        <%= link_to photo_path(:id => photo.provider_id) do %>
           <%= image_tag( photo.image_url, alt: photo.name ) %>
         <% end %>
       </div>

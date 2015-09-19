@@ -1,11 +1,10 @@
 <div class="container">
-
   <div id="large-photo-display">
-    <%= image_helper( @photo.image_url, alt: @photo.name ) %>
+    <%= image_tag( @photo.image_url, alt: @photo.name ) %>
 
     <div class="price"></div>
     <div id="author-image">
-      <%= image_helper( @photo.author_image, alt: @photo.author_full_name ) %>
+      <%= image_tag( @photo.author_image, alt: @photo.author_full_name ) %>
     </div>
     <div id="photo-display-name">@photo.name</div>
   </div>
@@ -22,5 +21,6 @@
     </div>
   </div>
 
-  <div id="buy-button"></div>
+  <div id="buy-button">
+  </div>
 </div>

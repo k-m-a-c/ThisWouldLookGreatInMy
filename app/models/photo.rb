@@ -40,4 +40,15 @@ class Photo
       flash[:error] = [e.message]
     end
   end
+
+  def self.find(photo_id)
+    client = F00px::Client.new
+    composed_url = "photos/#{ photo_id }"
+
+    response = client.get(composed_url)
+    hash = JSON.parse(response.body)
+
+    photo = hash['photo']
+    Photo.new(photo)
+  end
 end
