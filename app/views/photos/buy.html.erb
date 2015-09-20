@@ -1,0 +1,13 @@
+<div id="photo-purchase-options">
+  <div id="photo-size-options">
+    <%= render partial: 'size_options', locals: { photo: @photo } %>
+  </div>
+  <div id="photo-canvas-options">
+    <%= render partial: 'canvas_options', locals: { photo: @photo } %>
+  </div>
+  <div id="photo-frame-options">
+    <%= render partial: 'frame_options', locals: { photo: @photo } %>
+  </div>
+</div>
+
+<div id="buy-button">
