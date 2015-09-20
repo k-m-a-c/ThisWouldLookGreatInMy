@@ -1,12 +1,13 @@
 class Photo
   require 'json'
 
-  attr_accessor :provider_id, :name, :width, :height, :for_sale, :nsfw,
+  attr_accessor :provider_id, :name, :description, :width, :height, :for_sale, :nsfw,
     :favorited, :image_url, :author_full_name, :author_image
 
   def initialize(params)
     @provider_id = params['id']
     @name = params['name']
+    @description = params['description']
     @width = params['width']
     @height = params['height']
     @for_sale = params['for_sale']

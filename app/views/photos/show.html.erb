@@ -1,26 +1,15 @@
-<div class="container">
+<div class="display-container">
   <div id="large-photo-display">
     <%= image_tag( @photo.image_url, alt: @photo.name ) %>
-
     <div class="price"></div>
-    <div id="author-image">
-      <%= image_tag( @photo.author_image, alt: @photo.author_full_name ) %>
+    <div id="photo-display-name"><%= @photo.name %></div>
+    <div id="author-info">
+      <%= image_tag( @photo.author_image, alt: @photo.author_full_name ) %><div id="author-name"><%= @photo.author_full_name %></div>
     </div>
-    <div id="photo-display-name">@photo.name</div>
-  </div>
-
-  <div id="photo-purchase-options">
-    <div id="photo-size-options">
-      <%= render partial: 'size_options', locals: { photo: @photo } %>
+    <div class="purchase-options-button">
+      <%= button_to "See Purchase Options", buy_photo_path(photo_id: @photo.provider_id), method: :get %>
     </div>
-    <div id="photo-canvas-options">
-      <%= render partial: 'canvas_options', locals: { photo: @photo } %>
-    </div>
-    <div id="photo-frame-options">
-      <%= render partial: 'frame_options', locals: { photo: @photo } %>
-    </div>
-  </div>
-
-  <div id="buy-button">
+    <div id="info-divider"></div>
+    <div id="photo-description"><%= @photo.description %></div>
   </div>
 </div>
